@@ -1,11 +1,23 @@
-function getRandom(min, max) {
+
+/*function getRandom(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
   }
+*/
+//use strict
+var numberOfFilms=prompt("Сколько фильмов вы уже посмотрели?");
 
-var q1=prompt("Введи первое число"),
-q2=prompt("Введи второе число");
+var personalMovieDb={
+  count:numberOfFilms,
+  movies:undefined,
+  actors:undefined,
+  genres:undefined,
+  private:false,
+};
 
-if (q1==q2) {
-    console.log('Числа равны, заебись!');}
+let last=prompt("Какой фильм посмотрели последним?");
+let lastRating=+prompt("На сколько его оцениваете?");
+personalMovieDb.movies=(last + ':' + lastRating); 
+
+console.log(personalMovieDb);
